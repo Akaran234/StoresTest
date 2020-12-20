@@ -18,10 +18,8 @@ class UserModel(db.Model):
 
     @classmethod
     def find_by_username(cls, username):
-        # SELECT * FROM users WHERE username=username LIMIT 1; note: first() is because we only except one to be found.
         return cls.query.filter_by(username=username).first()
 
     @classmethod
     def find_by_id(cls, _id):
-        # SELECT *ø FROM users WHERE id=_id LIMIT 1;
         return cls.query.filter_by(id=_id).first()
